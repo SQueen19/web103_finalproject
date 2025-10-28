@@ -20,21 +20,67 @@ TaskFlow was inspired by tools like Trello and Notion, but reimagined as a custo
 
 ## Tech Stack
 
-Frontend:
+Frontend: Picoss.css, React, Context to an API, fetch request
 
-Backend:
+Backend: Node.js and Express.js, PostgreSQL ,pg, dotenv 
 
 ## Features
 
-### [Name of Feature 1]
+### Full CRUD
 
-[short description goes here]
+Users can create, view, edit, and delete both projects and tasks.
+Each action updates the database in real time through RESTful API endpoints.
 
 [gif goes here]
 
-### [Name of Feature 2]
+### Relational Database Design
 
-[short description goes here]
+This structure models real collaborative workflows with role-based membership and per-project configurations.
+
+[gif goes here]
+
+### Data Generation - to be reviewed
+
+When a new project is created, TaskFlow automatically adds a few starter tasks such as:
+
+“Welcome to TaskFlow”
+
+“Invite teammates”
+
+“Set your first milestone”
+
+This feature demonstrates backend event-based automation.
+
+[gif goes here]
+
+### Data validation and Error handling
+
+Before updates are saved, data is validated — for example:
+
+Tasks cannot be created with a due date in the past.
+
+Projects must have a title.
+If invalid data is sent, the backend responds with clear error messages using custom Express middleware.
+
+[gif goes here]
+
+### Sliding UI
+
+The frontend includes modals for adding or editing tasks, which appear as overlays on the same page.
+This allows users to perform quick edits without losing context — a user-friendly single-page interaction.
+
+[gif goes here]
+
+### filtering and sorting
+
+Users can filter and sort tasks by:
+
+Due date
+
+Priority
+
+Status (Complete / Incomplete)
+These operations occur client-side for responsiveness, with options to extend filtering to the backend via query parameters.
 
 [gif goes here]
 
