@@ -25,7 +25,7 @@ I got some good ideas written.
 
 ### 2. What were some challenges your group faced in this unit?
 
-Need more partener input.
+Need more partner input.
 
 ### 3. What additional support will you need in upcoming units as you continue to work on your final project?
 
