@@ -1,8 +1,8 @@
-# [your app name here]
+# TaskFlow
 
 CodePath WEB103 Final Project
 
-Designed and developed by: [your names here]
+Designed and developed by: Sydelle Nyegamo and Ulykbek Khairulla
 
 🔗 Link to deployed app:
 
@@ -10,11 +10,13 @@ Designed and developed by: [your names here]
 
 ### Description and Purpose
 
-[text goes here]
+TaskFlow is a full-stack web app that helps users stay organized by creating and managing projects and tasks. Each project includes customizable settings and multiple members, while tasks can be sorted, filtered, and updated in real time.
+
+Built with Express.js and PostgreSQL, TaskFlow’s backend supports full CRUD operations, automatic task generation for new projects, and robust data validation. The goal of the project is to make task management more efficient, clear, and collaborative.
 
 ### Inspiration
 
-[text goes here]
+TaskFlow was inspired by tools like Trello and Notion, but reimagined as a custom-built full-stack app. The goal was to create a clean, minimal project manager that demonstrates database relationships, RESTful API design, and backend automation — while remaining practical for real-world use.
 
 ## Tech Stack
 
