@@ -10,7 +10,7 @@ Designed and developed by: Sydelle Nyegamo and Ulykbek Khairulla
 
 ### Description and Purpose
 
-TaskFlow is a full-stack web app that helps users stay organized by creating and managing projects and tasks. Each project includes customizable settings and multiple members, while tasks can be sorted, filtered, and updated in real time.
+TaskFlow is a full-stack web app that helps users stay organized by creating and managing projects and tasks. Each project includes customizable settings, while tasks can be sorted, filtered, and updated in real time.
 
 Built with Express.js and PostgreSQL, TaskFlow’s backend supports full CRUD operations, automatic task generation for new projects, and robust data validation. The goal of the project is to make task management more efficient, clear, and collaborative.
 
