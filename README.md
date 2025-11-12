@@ -39,19 +39,19 @@ This structure models real collaborative workflows with role-based membership an
 
 [gif goes here]
 
-### Data Generation - to be reviewed
+### Data Generation - to be reviewed ✅
 
 When a new project is created, TaskFlow automatically adds a few starter tasks such as:
 
 “Welcome to TaskFlow”
 
-“Invite teammates”
+“Invite teammates” - optional
 
 “Set your first milestone”
 
 This feature demonstrates backend event-based automation.
 
-[gif goes here]
+https://imgur.com/a/3tIdNfD
 
 ### Data validation and Error handling
 
