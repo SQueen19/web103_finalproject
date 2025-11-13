@@ -1,0 +1,45 @@
+/* Styles for CreateTask page */
+.create-task {
+	max-width: 640px;
+	margin: 16px auto;
+	padding: 12px;
+	border: 1px solid #e6e6e6;
+	border-radius: 6px;
+	background: #fff;
+}
+.create-task h2 {
+	margin: 0 0 12px 0;
+	font-size: 1.25rem;
+}
+.create-form .field {
+	display: block;
+	margin-bottom: 10px;
+	font-size: 0.95rem;
+}
+.create-form input[type="text"],
+.create-form input[type="date"],
+.create-form textarea,
+.create-form input[name="title"] {
+	width: 100%;
+	padding: 8px;
+	box-sizing: border-box;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	margin-top: 6px;
+}
+.create-form .actions {
+	margin-top: 8px;
+}
+.create-form button {
+	padding: 8px 12px;
+	border: none;
+	background: #2563eb;
+	color: white;
+	border-radius: 4px;
+	cursor: pointer;
+}
+.create-form button:hover { opacity: 0.95 }
+.message {
+	color: #064e3b;
+	margin-top: 8px;
+}

@@ -1,0 +1,28 @@
+/* Styles for ViewTasks page */
+.view-tasks {
+	max-width: 760px;
+	margin: 16px auto;
+	padding: 12px;
+	border: 1px solid #e6e6e6;
+	border-radius: 6px;
+	background: #fff;
+}
+.view-tasks h2 { margin: 0 0 12px 0 }
+.view-tasks .controls { margin-bottom: 10px }
+.view-tasks .controls button { margin-right: 8px }
+.tasks-list { list-style: none; padding: 0; margin: 0 }
+.task-item {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	padding: 10px;
+	border-bottom: 1px solid #f0f0f0;
+}
+.task-item.completed .task-title { text-decoration: line-through; color: #6b7280 }
+.task-main { display: flex; gap: 10px }
+.task-content { max-width: 640px }
+.task-title { font-weight: 600 }
+.task-meta { font-size: 0.85rem; color: #6b7280 }
+.task-desc { margin-top: 6px; color: #374151 }
+.task-actions button { background: #ef4444; color: white; border: none; padding: 6px 8px; border-radius: 4px; cursor: pointer }
+.no-tasks { color: #6b7280; margin-top: 12px }
