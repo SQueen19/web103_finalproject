@@ -1,0 +1,34 @@
+import { User, LogOut } from "lucide-react";
+
+export function Navbar() {
+  return (
+    <div className="border-b-2 border-gray-400 bg-gray-100 px-6 py-4">
+      <div className="flex items-center justify-between max-w-7xl mx-auto">
+        {/* Logo */}
+        <div className="flex items-center gap-2">
+          <div className="w-8 h-8 border-2 border-gray-600 flex items-center justify-center">
+            <span className="text-xs">TF</span>
+          </div>
+          <span className="tracking-wide">TaskFlow</span>
+        </div>
+
+        {/* Right side actions */}
+        <div className="flex items-center gap-4">
+          <button className="w-10 h-10 border-2 border-gray-600 rounded-full flex items-center justify-center hover:bg-gray-200">
+            <User size={18} />
+          </button>
+          <button className="px-4 py-2 border-2 border-gray-600 hover:bg-gray-200 flex items-center gap-2"
+          onClick={() => console.log("Logout button clicked")}>
+            <LogOut size={16} />
+            <span className="text-sm">Logout</span>
+          </button>
+        </div>
+      </div>
+
+      {/* Annotation */}
+      <div className="absolute top-0 right-0 text-[10px] text-gray-400 italic px-2">
+        Nav Bar
+      </div>
+    </div>
+  );
+}
