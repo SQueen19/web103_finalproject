@@ -134,10 +134,10 @@ export function NewProject({ onBack }) {
                 value={formData.category}
                 onValueChange={(value) => handleChange('category', value)}
               >
-                <SelectTrigger className="border-2 border-gray-400 focus:border-gray-600">
+                <SelectTrigger className="border-2 border-gray-400 focus:border-gray-600 bg-white">
                   <SelectValue placeholder="Select category" />
                 </SelectTrigger>
-                <SelectContent>
+                <SelectContent className="bg-white">
                   <SelectItem value="development">Development</SelectItem>
                   <SelectItem value="design">Design</SelectItem>
                   <SelectItem value="marketing">Marketing</SelectItem>
@@ -154,10 +154,10 @@ export function NewProject({ onBack }) {
                 value={formData.status}
                 onValueChange={(value) => handleChange('status', value)}
               >
-                <SelectTrigger className="border-2 border-gray-400 focus:border-gray-600">
+                <SelectTrigger className="border-2 border-gray-400 focus:border-gray-600 bg-white">
                   <SelectValue />
                 </SelectTrigger>
-                <SelectContent>
+                <SelectContent className="bg-white">
                   <SelectItem value="planning">Planning</SelectItem>
                   <SelectItem value="active">Active</SelectItem>
                   <SelectItem value="on-hold">On Hold</SelectItem>

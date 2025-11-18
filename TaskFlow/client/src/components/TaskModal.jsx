@@ -162,10 +162,10 @@ export function TaskModal({ isOpen, onClose, projectId, onTaskCreated }) {
                   onValueChange={(value) => handleChange('priority', value)}
                   disabled={loading}
                 >
-                  <SelectTrigger className="border-2 border-gray-400 focus:border-gray-600">
+                  <SelectTrigger className="border-2 border-gray-400 focus:border-gray-600 bg-white">
                     <SelectValue placeholder="Select priority" />
                   </SelectTrigger>
-                  <SelectContent>
+                  <SelectContent className="bg-white">
                     <SelectItem value="low">Low</SelectItem>
                     <SelectItem value="medium">Medium</SelectItem>
                     <SelectItem value="high">High</SelectItem>
@@ -182,10 +182,10 @@ export function TaskModal({ isOpen, onClose, projectId, onTaskCreated }) {
                 onValueChange={(value) => handleChange('status', value)}
                 disabled={loading}
               >
-                <SelectTrigger className="border-2 border-gray-400 focus:border-gray-600">
+                <SelectTrigger className="border-2 border-gray-400 focus:border-gray-600 bg-white">
                   <SelectValue />
                 </SelectTrigger>
-                <SelectContent>
+                <SelectContent className="bg-white">
                   <SelectItem value="todo">To Do</SelectItem>
                   <SelectItem value="in-progress">In Progress</SelectItem>
                   <SelectItem value="done">Done</SelectItem>

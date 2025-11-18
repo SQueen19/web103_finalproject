@@ -24,11 +24,6 @@ export function Navbar() {
           </button>
         </div>
       </div>
-
-      {/* Annotation */}
-      <div className="absolute top-0 right-0 text-[10px] text-gray-400 italic px-2">
-        Nav Bar
-      </div>
     </div>
   );
 }

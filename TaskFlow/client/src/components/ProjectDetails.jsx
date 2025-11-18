@@ -162,9 +162,6 @@ export function ProjectDetails({ projectId, onBack }) {
     <div className="flex h-screen overflow-hidden">
       {/* Sidebar - Filters */}
       <div className="w-64 border-r-2 border-gray-400 bg-gray-50 p-6 relative">
-        <div className="absolute top-0 right-0 text-[10px] text-gray-400 italic px-2 py-1">
-          Filter Panel
-        </div>
         
         <h3 className="mb-6">Filters & Sort</h3>
 
