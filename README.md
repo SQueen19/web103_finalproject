@@ -14,6 +14,10 @@ TaskFlow is a full-stack web app that helps users stay organized by creating and
 
 Built with Express.js and PostgreSQL, TaskFlow’s backend supports full CRUD operations, automatic task generation for new projects, and robust data validation. The goal of the project is to make task management more efficient, clear, and collaborative.
 
+##Important Note:
+When downloading, importing reposiotry, make sure to opend the folder named TaskFlow and cd to the client folder to run. If needed write 'npm install' before runing.
+
+
 ### Inspiration
 
 TaskFlow was inspired by tools like Trello and Notion, but reimagined as a custom-built full-stack app. The goal was to create a clean, minimal project manager that demonstrates database relationships, RESTful API design, and backend automation — while remaining practical for real-world use.
@@ -88,7 +92,7 @@ These operations occur client-side for responsiveness, with options to extend fi
 
 [short description goes here]
 
-[gif goes here]
+[gif goes he
 
 ### [ADDITIONAL FEATURES GO HERE - ADD ALL FEATURES HERE IN THE FORMAT ABOVE; you will check these off and add gifs as you complete them]
 
