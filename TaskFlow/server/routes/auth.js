@@ -40,12 +40,34 @@ router.get(
 )
 
 // GitHub callback route
-router.get(
-    '/github/callback',
-    passport.authenticate('github', {
-        successRedirect: process.env.CLIENT_URL || 'http://localhost:5173',
-        failureRedirect: (process.env.CLIENT_URL || 'http://localhost:5173') + '/login/failed'
-    })
-)
+// Use a custom callback so we can log debug info and ensure session is set
+router.get('/github/callback', (req, res, next) => {
+    passport.authenticate('github', (err, user, info) => {
+        if (err) {
+            console.error('Passport authentication error:', err)
+            return res.redirect((process.env.CLIENT_URL || 'http://localhost:5173') + '/login/failed')
+        }
+
+        if (!user) {
+            console.warn('No user returned from Passport during GitHub callback')
+            return res.redirect((process.env.CLIENT_URL || 'http://localhost:5173') + '/login/failed')
+        }
+
+        // Log user and session info for debugging
+        console.log('GitHub callback - user:', user && user.username ? user.username : user)
+
+        req.logIn(user, (loginErr) => {
+            if (loginErr) {
+                console.error('Error calling req.logIn:', loginErr)
+                return res.redirect((process.env.CLIENT_URL || 'http://localhost:5173') + '/login/failed')
+            }
+
+            console.log('Session after logIn:', { sessionID: req.sessionID, session: !!req.session })
+
+            // Redirect to client app
+            return res.redirect(process.env.CLIENT_URL || 'http://localhost:5173')
+        })
+    })(req, res, next)
+})
 
 export default router

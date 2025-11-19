@@ -14,9 +14,15 @@ export default function App() {
 
   useEffect(() => {
     const getUser = async () => {
-      const response = await fetch(`${API_URL}/auth/login/success`, { credentials: 'include' })
-      const json = await response.json()
-      setUser(json.user)
+      try {
+        const response = await fetch(`${API_URL}/auth/login/success`, { credentials: 'include' })
+        const json = await response.json()
+        // Normalize: if server didn't return a user, set state to null
+        setUser(json && json.user ? json.user : null)
+      } catch (err) {
+        // Network or parsing error — treat as not authenticated
+        setUser(null)
+      }
     }
 
     getUser()
@@ -43,9 +49,9 @@ export default function App() {
     setSelectedProjectId(null);
   };
 
-  // Show login page if user is not authenticated
-  if (!user || !user.id) {
-    return <Login api_url={API_URL} />
+  // Show login page if user has not been set (null means not authenticated)
+  if (user === null) {
+    return <Login api_url={API_URL} onLogin={setUser} />
   }
 
   return (

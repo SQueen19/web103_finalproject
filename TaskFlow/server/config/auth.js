@@ -2,10 +2,16 @@ import { Strategy as GitHub } from 'passport-github2'
 import { pool } from './database.js'
 
 const options = {
-  clientID: process.env.GITHUB_CLIENT_ID,
-  clientSecret: process.env.GITHUB_CLIENT_SECRET,
-  callbackURL: 'https://taskflow-server-qgp4.onrender.com/auth/github/callback',
+    clientID: process.env.GITHUB_CLIENT_ID,
+    clientSecret: process.env.GITHUB_CLIENT_SECRET,
+    // Allow configuring callback via env for local development vs production
+    callbackURL: process.env.GITHUB_CALLBACK_URL || 'http://localhost:3000/auth/github/callback',
 };
+
+// Helpful debug output so we can confirm what's registered/sent to GitHub
+console.log('GitHub OAuth configuration:')
+console.log('  GITHUB_CLIENT_ID:', process.env.GITHUB_CLIENT_ID ? '[set]' : '[missing]')
+console.log('  GITHUB_CALLBACK_URL used by Passport:', options.callbackURL)
 
 const verify = async (accessToken, refreshToken, profile, callback)  => {
     const { _json: { id, name, login, avatar_url } } = profile
