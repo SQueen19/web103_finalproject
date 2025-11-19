@@ -11,10 +11,17 @@ import { GitHub } from './config/auth.js'
 
 const app = express()
 
+app.set('trust proxy', 1) // Trust first proxy
+
 app.use(session({
     secret: 'codepath',
     resave: false,
-    saveUninitialized: true
+    saveUninitialized: true,
+    cookie: {
+        secure: process.env.NODE_ENV === 'production',
+        sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax',
+        maxAge: 24 * 60 * 60 * 1000 // 24 hours
+    }
 }))
 app.use(express.json())
 app.use(cors({
