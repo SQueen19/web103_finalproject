@@ -4,7 +4,7 @@ CodePath WEB103 Final Project
 
 Designed and developed by: Sydelle Nyegamo and Ulykbek Khairulla
 
-🔗 Link to deployed app:
+🔗 Link to deployed app: Not provided yet
 
 ## About
 
@@ -31,13 +31,13 @@ Backend: Node.js and Express.js, PostgreSQL ,pg, dotenv
 Users can create, view, edit, and delete both projects and tasks.
 Each action updates the database in real time through RESTful API endpoints.
 
-[gif goes here]
+[[gif goes here]](https://imgur.com/a/O7FOhQC)
 
 ### Relational Database Design
 
 This structure models real collaborative workflows with role-based membership and per-project configurations.
 
-[gif goes here]
+https://imgur.com/a/O7FOhQC
 
 ### Data Generation - to be reviewed ✅
 
@@ -53,7 +53,7 @@ This feature demonstrates backend event-based automation.
 
 https://imgur.com/a/3tIdNfD
 
-### Data validation and Error handling
+### Data validation and Error handling ✅
 
 Before updates are saved, data is validated — for example:
 
@@ -62,27 +62,27 @@ Tasks cannot be created with a due date in the past.
 Projects must have a title.
 If invalid data is sent, the backend responds with clear error messages using custom Express middleware.
 
-[gif goes here]
+[[gif goes here]](https://imgur.com/a/O7FOhQC)
 
-### Sliding UI
+### Add Task
 
 The frontend includes modals for adding or editing tasks, which appear as overlays on the same page.
 This allows users to perform quick edits without losing context — a user-friendly single-page interaction.
 
-[gif goes here]
+[[gif goes here]](https://imgur.com/a/O7FOhQC)
 
-### filtering and sorting
+### filtering and sorting ✅
 
 Users can filter and sort tasks by:
 
 Due date
 
-Priority
+Priority 
 
 Status (Complete / Incomplete)
 These operations occur client-side for responsiveness, with options to extend filtering to the backend via query parameters.
 
-[gif goes here]
+[[gif goes here]](https://imgur.com/a/O7FOhQC)
 
 ### [Name of Feature 3]
 
