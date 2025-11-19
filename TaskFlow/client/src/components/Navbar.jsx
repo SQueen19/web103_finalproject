@@ -1,6 +1,7 @@
-import { User, LogOut } from "lucide-react";
+import { LogOut } from "lucide-react";
+import Avatar from "./Avatar";
 
-export function Navbar() {
+export function Navbar({ logout, user }) {
   return (
     <div className="border-b-2 border-gray-400 bg-gray-100 px-6 py-4">
       <div className="flex items-center justify-between max-w-7xl mx-auto">
@@ -14,11 +15,14 @@ export function Navbar() {
 
         {/* Right side actions */}
         <div className="flex items-center gap-4">
-          <button className="w-10 h-10 border-2 border-gray-600 rounded-full flex items-center justify-center hover:bg-gray-200">
-            <User size={18} />
-          </button>
-          <button className="px-4 py-2 border-2 border-gray-600 hover:bg-gray-200 flex items-center gap-2"
-          onClick={() => console.log("Logout button clicked")}>
+          <div className="flex items-center gap-3">
+            <span className="text-sm font-medium">{user?.username}</span>
+            <Avatar user={user} />
+          </div>
+          <button 
+            onClick={logout} 
+            className="px-4 py-2 border-2 border-gray-600 hover:bg-gray-200 flex items-center gap-2"
+          >
             <LogOut size={16} />
             <span className="text-sm">Logout</span>
           </button>

@@ -3,16 +3,17 @@ import { pool } from '../config/database.js'
 // Create a new project
 const createProject = async (req, res) => {
   try {
-    const { title, description, due_date, start_date, category, status, progress } = req.body
+    const { title, description, due_date, start_date, category, status, progress, user_id } = req.body
     
     const result = await pool.query(
-      `INSERT INTO projects (title, description, due_date, start_date, category, status, progress)
-       VALUES ($1, $2, $3, $4, $5, $6, $7)
+      `INSERT INTO projects (title, description, due_date, start_date, category, status, progress, user_id)
+       VALUES ($1, $2, $3, $4, $5, $6, $7, $8)
        RETURNING *`,
-      [title, description, due_date, start_date, category, status || 'planning', progress || 0]
+      [title, description, due_date, start_date, category, status || 'planning', progress || 0, user_id]
     )
     
     res.status(201).json(result.rows[0])
+    console.log('🆕 project created by user:', user_id)
   } catch (error) {
     res.status(500).json({ error: error.message })
   }

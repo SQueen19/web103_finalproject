@@ -4,6 +4,15 @@ import './dotenv.js'
 const createTablesQuery = `
   DROP TABLE IF EXISTS tasks CASCADE;
   DROP TABLE IF EXISTS projects CASCADE;
+  DROP TABLE IF EXISTS users CASCADE;
+
+  CREATE TABLE users (
+    id SERIAL PRIMARY KEY,
+    githubid INTEGER UNIQUE NOT NULL,
+    username VARCHAR(100) NOT NULL,
+    avatarurl VARCHAR(500),
+    accesstoken VARCHAR(500)
+  );
 
   CREATE TABLE projects (
     id SERIAL PRIMARY KEY,
@@ -14,6 +23,7 @@ const createTablesQuery = `
     category VARCHAR(100),
     status VARCHAR(50) DEFAULT 'planning',
     progress INTEGER DEFAULT 0,
+    user_id INTEGER REFERENCES users(id),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
   );
@@ -33,6 +43,11 @@ const createTablesQuery = `
 `
 
 const seedDataQuery = `
+  -- Seed Users
+  INSERT INTO users (githubid, username, avatarurl, accesstoken) VALUES
+  (12345678, 'demo_user', 'https://avatars.githubusercontent.com/u/12345678', 'demo_token_123'),
+  (87654321, 'test_user', 'https://avatars.githubusercontent.com/u/87654321', 'demo_token_456');
+
   -- Seed Projects
   INSERT INTO projects (title, due_date, progress, status, category) VALUES
   ('Website Redesign', '2025-12-15', 65, 'active', 'design'),

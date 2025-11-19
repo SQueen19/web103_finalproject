@@ -6,7 +6,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '.
 import { useState } from 'react';
 import { createProject } from '../../services/projectsApi';
 
-export function NewProject({ onBack }) {
+export function NewProject({ onBack, user }) {
   const [formData, setFormData] = useState({
     title: '',
     description: '',
@@ -14,7 +14,8 @@ export function NewProject({ onBack }) {
     due_date: '',
     category: '',
     status: 'planning',
-    progress: 0
+    progress: 0,
+    user_id: user?.id
   });
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);

@@ -90,10 +90,6 @@ export function TaskModal({ isOpen, onClose, projectId, onTaskCreated }) {
   return (
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
       <div className="bg-white border-4 border-gray-600 max-w-2xl w-full relative">
-        {/* Annotation */}
-        <div className="absolute -top-8 left-0 text-[10px] text-gray-300 italic">
-          Task Modal (Overlay)
-        </div>
 
         {/* Modal Header */}
         <div className="border-b-2 border-gray-400 px-6 py-4 flex items-center justify-between bg-gray-100">
